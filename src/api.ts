@@ -6,6 +6,11 @@ import { RequestWithChat, withChat } from '~/middleware/withChat'
 export const router = Router()
 
 router
+  // example using POST
   .post<RequestWithChat>('/gpt', withContent, withChat,
-    ({ chat, content }) => chat.send(content)
+    ({ chat, content }) =>
+      chat
+        .addMessage(content)
+        .send()
+        .then((r: any) => r?.choices?.[0].message.content)
   )
