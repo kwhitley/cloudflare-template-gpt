@@ -1,0 +1,9 @@
+account_id = "{YOUR_CLOUDFLARE_ACCOUNT_ID}"
+name = "simple-gpt-api"
+compatibility_date = "2022-12-20"
+workers_dev = false
+main = "./src/index.ts"
+routes = [
+  "{YOUR_DOMAIN}",
+  "{YOUR_DOMAIN}/*",
+]

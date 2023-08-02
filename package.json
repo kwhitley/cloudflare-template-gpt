@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "name": "cloudflare-worker-gpt-template",
+  "version": "0.0.1",
+  "description": "Cloudflare Worker GPT Template",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "dev": "wrangler dev",
+    "lint": "eslint --max-warnings=0 src && prettier --check '*.{json,js}' 'src/**/*.{js,ts}'",
+    "format": "prettier --write  '*.{json,js}' 'src/**/*.{js,ts}'",
+    "release": "release --push --nopublish --patch",
+    "postrelease": "wrangler publish",
+    "tail": "wrangler tail"
+  },
+  "author": "Kevin Whitley <krwhitley@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.9.0",
+    "eslint-config-typescript": "^3.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6",
+    "yarn-release": "^1.10.6"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20230801.0",
+    "itty-fetcher": "^0.8.1",
+    "itty-router": "^4.0.14"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "typescript",
+      "prettier"
+    ]
+  }
+}
