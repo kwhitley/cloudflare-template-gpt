@@ -19,7 +19,7 @@ export class Chat {
   constructor(api_key: string) {
     this.api_key = api_key
     this.fetcher = fetcher({
-      base: 'https://api.openai.com/v1/chat/completins',
+      base: 'https://api.openai.com/v1/chat/completions',
       headers: {
         Authorization: `Bearer ${api_key}`,
       },
